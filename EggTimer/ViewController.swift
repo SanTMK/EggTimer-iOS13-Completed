@@ -5,21 +5,37 @@
 //  Created by Angela Yu on 08/07/2019.
 //  Copyright © 2019 The App Brewery. All rights reserved.
 //
+//  Edited by Santiago Hernandez on Mar. 4, 2022
+//  Enhancements:
+//    1) Added Haptic Feedback and vibrations
+//    2) Added custom timer
+
 
 import UIKit
 import AVFoundation
 
 class ViewController: UIViewController {
     
+    
+    
+    @IBOutlet weak var InputSeconds: UITextField!
     @IBOutlet weak var progressBar: UIProgressView!
     @IBOutlet weak var titleLabel: UILabel!
-    let eggTimes = ["Soft": 3, "Medium": 4, "Hard": 7]
+    var eggTimes = ["Soft": 3, "Medium": 4, "Hard": 7, "Start": 0]
     var timer = Timer()
     var player: AVAudioPlayer!
     var totalTime = 0
     var secondsPassed = 0
     
     @IBAction func hardnessSelected(_ sender: UIButton) {
+        
+        HapticsManager.shared.selectionVibrate()
+//        <-----Enhancement #2:----->
+//        Include custom time parameter to eggTimes dictionary
+        
+        if sender.currentTitle == "Start" {
+            eggTimes["Start"] = Int(InputSeconds.text!)
+        }
         
         timer.invalidate()
         let hardness = sender.currentTitle!
@@ -45,9 +61,10 @@ class ViewController: UIViewController {
             player = try! AVAudioPlayer(contentsOf: url!)
             player.play()
             
-            //        <-----Enhancement #1----->
+//        <-----Enhancement #1:----->
+//        Haptic feedback on completion of timer as well as button presses. See HapticsManager.swift file for details
             
-            HapticsManager.shared.vibrate(for: .success)
+            HapticsManager.shared.vibrate(for: .error)
         }
     }
     

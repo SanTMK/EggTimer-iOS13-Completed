@@ -9,15 +9,21 @@
 //  Enhancements:
 //    1) Added Haptic Feedback and vibrations
 //    2) Added custom timer
-
+//    3) Added ability to modify values of egg timers
 
 import UIKit
 import AVFoundation
 
-class ViewController: UIViewController {
+
+class ViewController: UIViewController, UITextFieldDelegate {
     
     
     
+    
+    
+    @IBOutlet weak var HardEggTime: UITextField!
+    @IBOutlet weak var MediumEggTime: UITextField!
+    @IBOutlet weak var SoftEggTime: UITextField!
     @IBOutlet weak var InputSeconds: UITextField!
     @IBOutlet weak var progressBar: UIProgressView!
     @IBOutlet weak var titleLabel: UILabel!
@@ -26,6 +32,15 @@ class ViewController: UIViewController {
     var player: AVAudioPlayer!
     var totalTime = 0
     var secondsPassed = 0
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        InputSeconds.delegate = self
+        SoftEggTime.delegate = self
+        MediumEggTime.delegate = self
+        HardEggTime.delegate = self
+    }
     
     @IBAction func hardnessSelected(_ sender: UIButton) {
         
@@ -67,5 +82,34 @@ class ViewController: UIViewController {
             HapticsManager.shared.vibrate(for: .error)
         }
     }
+    
+    //        <-----Enhancement #3:----->
+//    Added a way to customize the value of each timer individually
+    
+    @IBAction func clickNewTime(_ sender: UIButton) {
+        HapticsManager.shared.selectionVibrate()
+    
+        if SoftEggTime.hasText {
+            eggTimes["Soft"] = Int(SoftEggTime.text!)
+        } else if MediumEggTime.hasText {
+            eggTimes["Medium"] = Int(MediumEggTime.text!)
+        }else if HardEggTime.hasText {
+            eggTimes["Hard"] = Int(HardEggTime.text!)
+        }
+    
+    }
+    
+//    Hide keyboard when pressing 'intro' key
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        InputSeconds.resignFirstResponder()
+        HardEggTime.resignFirstResponder()
+        MediumEggTime.resignFirstResponder()
+        SoftEggTime.resignFirstResponder()
+        
+        return true
+    }
+    
     
 }

@@ -35,7 +35,7 @@
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Custom Time:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ReR-N5-ckq">
                                                         <rect key="frame" x="0.0" y="0.0" width="61.5" height="41"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <nil key="textColor"/>
+                                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="# sec." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="70H-xN-m1v">
@@ -44,13 +44,16 @@
                                                             <accessibilityTraits key="traits" none="YES"/>
                                                         </accessibility>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" enablesReturnKeyAutomatically="YES"/>
                                                     </textField>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l2S-1K-pvx">
                                                         <rect key="frame" x="297" y="0.0" width="61" height="41"/>
                                                         <color key="tintColor" systemColor="systemBrownColor"/>
                                                         <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="filled" title="Start"/>
+                                                        <buttonConfiguration key="configuration" style="filled" title="Start">
+                                                            <color key="baseForegroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="baseBackgroundColor" red="0.79215686269999996" green="0.81960784310000001" blue="0.98823529409999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </buttonConfiguration>
                                                         <connections>
                                                             <action selector="hardnessSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mZo-5o-yP7"/>
                                                         </connections>
@@ -90,12 +93,20 @@
                                                             <action selector="hardnessSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bkf-np-fDk"/>
                                                         </connections>
                                                     </button>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="3" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3ew-jK-fXp">
+                                                        <rect key="frame" x="40.5" y="225" width="37" height="34"/>
+                                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" enablesReturnKeyAutomatically="YES"/>
+                                                    </textField>
                                                 </subviews>
                                                 <constraints>
                                                     <constraint firstItem="kNr-Dp-1Dg" firstAttribute="leading" secondItem="krr-GL-MDb" secondAttribute="leading" id="9k3-nO-Vab"/>
+                                                    <constraint firstAttribute="bottom" secondItem="3ew-jK-fXp" secondAttribute="bottom" id="De8-Kf-r2E"/>
                                                     <constraint firstAttribute="trailing" secondItem="kNr-Dp-1Dg" secondAttribute="trailing" id="DkU-fn-zn6"/>
                                                     <constraint firstAttribute="bottom" secondItem="kNr-Dp-1Dg" secondAttribute="bottom" id="EpS-aF-277"/>
                                                     <constraint firstItem="9Dz-Gz-hZV" firstAttribute="leading" secondItem="krr-GL-MDb" secondAttribute="leading" id="QZu-31-Pev"/>
+                                                    <constraint firstItem="3ew-jK-fXp" firstAttribute="centerX" secondItem="krr-GL-MDb" secondAttribute="centerX" id="Xzl-LE-tHM"/>
                                                     <constraint firstItem="kNr-Dp-1Dg" firstAttribute="top" secondItem="krr-GL-MDb" secondAttribute="top" id="aqb-Qr-vC4"/>
                                                     <constraint firstItem="9Dz-Gz-hZV" firstAttribute="top" secondItem="krr-GL-MDb" secondAttribute="top" id="kdB-Br-hte"/>
                                                     <constraint firstAttribute="trailing" secondItem="9Dz-Gz-hZV" secondAttribute="trailing" id="ncd-p6-cMz"/>
@@ -116,9 +127,17 @@
                                                             <action selector="hardnessSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pch-SQ-GuJ"/>
                                                         </connections>
                                                     </button>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="4" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6tY-3P-Be8">
+                                                        <rect key="frame" x="40.5" y="225" width="37" height="34"/>
+                                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" enablesReturnKeyAutomatically="YES"/>
+                                                    </textField>
                                                 </subviews>
                                                 <constraints>
+                                                    <constraint firstItem="6tY-3P-Be8" firstAttribute="centerX" secondItem="8sX-Es-wjg" secondAttribute="centerX" id="0Vv-6j-sDK"/>
                                                     <constraint firstItem="aSR-UQ-xgS" firstAttribute="leading" secondItem="8sX-Es-wjg" secondAttribute="leading" id="0hX-t0-1f3"/>
+                                                    <constraint firstAttribute="bottom" secondItem="6tY-3P-Be8" secondAttribute="bottom" id="NHC-MF-zTD"/>
                                                     <constraint firstAttribute="bottom" secondItem="Q3H-nl-7AG" secondAttribute="bottom" id="Oz0-PI-KTt"/>
                                                     <constraint firstAttribute="trailing" secondItem="Q3H-nl-7AG" secondAttribute="trailing" id="QRg-C6-gF4"/>
                                                     <constraint firstItem="aSR-UQ-xgS" firstAttribute="top" secondItem="8sX-Es-wjg" secondAttribute="top" id="ZLf-pd-uei"/>
@@ -142,6 +161,12 @@
                                                             <action selector="hardnessSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Lgt-wb-PPS"/>
                                                         </connections>
                                                     </button>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="7" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="t6G-yZ-KAz">
+                                                        <rect key="frame" x="41" y="225" width="36" height="34"/>
+                                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" enablesReturnKeyAutomatically="YES"/>
+                                                    </textField>
                                                 </subviews>
                                                 <constraints>
                                                     <constraint firstAttribute="bottom" secondItem="NEu-V5-iHi" secondAttribute="bottom" id="856-GH-rQV"/>
@@ -151,7 +176,9 @@
                                                     <constraint firstItem="K9y-07-tEO" firstAttribute="top" secondItem="dkc-bh-F3c" secondAttribute="top" id="Kde-xM-i98"/>
                                                     <constraint firstItem="K9y-07-tEO" firstAttribute="leading" secondItem="dkc-bh-F3c" secondAttribute="leading" id="LYN-Fe-u5x"/>
                                                     <constraint firstItem="NEu-V5-iHi" firstAttribute="leading" secondItem="dkc-bh-F3c" secondAttribute="leading" id="Qf1-fJ-tRW"/>
+                                                    <constraint firstAttribute="bottom" secondItem="t6G-yZ-KAz" secondAttribute="bottom" id="R3r-nL-DZe"/>
                                                     <constraint firstAttribute="trailing" secondItem="NEu-V5-iHi" secondAttribute="trailing" id="WpS-uq-mfw"/>
+                                                    <constraint firstItem="t6G-yZ-KAz" firstAttribute="centerX" secondItem="dkc-bh-F3c" secondAttribute="centerX" id="fgf-h3-zpd"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
@@ -167,11 +194,31 @@
                                                 <color key="progressTintColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="trackTintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </progressView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kfn-6r-rgO">
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="35"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="35" id="Jzs-Do-3j6"/>
+                                                </constraints>
+                                                <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="Set New Time">
+                                                    <color key="baseForegroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="baseBackgroundColor" red="0.792156862745098" green="0.81960784313725488" blue="0.9882352941176471" alpha="1" colorSpace="calibratedRGB"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="clickNewTime:" destination="BYZ-38-t0r" eventType="touchUpInside" id="k9Y-o7-gBt"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="B4U-fy-91r" firstAttribute="centerY" secondItem="hpm-cy-XFb" secondAttribute="centerY" id="Ps1-AB-5Dz"/>
-                                            <constraint firstItem="B4U-fy-91r" firstAttribute="leading" secondItem="hpm-cy-XFb" secondAttribute="leading" id="ebX-ay-OzZ"/>
-                                            <constraint firstAttribute="trailing" secondItem="B4U-fy-91r" secondAttribute="trailing" id="m1W-KF-jiU"/>
+                                            <constraint firstAttribute="trailing" secondItem="B4U-fy-91r" secondAttribute="trailing" id="Ca6-eI-g4f"/>
+                                            <constraint firstItem="kfn-6r-rgO" firstAttribute="leading" secondItem="hpm-cy-XFb" secondAttribute="leading" id="I9a-bU-tTr"/>
+                                            <constraint firstItem="kfn-6r-rgO" firstAttribute="top" secondItem="hpm-cy-XFb" secondAttribute="top" id="TOJ-aE-XYd"/>
+                                            <constraint firstAttribute="trailing" secondItem="kfn-6r-rgO" secondAttribute="trailing" id="eIQ-Jd-td9"/>
+                                            <constraint firstItem="kfn-6r-rgO" firstAttribute="centerX" secondItem="hpm-cy-XFb" secondAttribute="centerX" id="iyy-md-IWS"/>
+                                            <constraint firstItem="B4U-fy-91r" firstAttribute="centerY" secondItem="hpm-cy-XFb" secondAttribute="centerY" id="kW5-6T-lw4"/>
+                                            <constraint firstItem="B4U-fy-91r" firstAttribute="leading" secondItem="hpm-cy-XFb" secondAttribute="leading" id="rp4-RJ-b3T"/>
+                                            <constraint firstItem="B4U-fy-91r" firstAttribute="centerX" secondItem="hpm-cy-XFb" secondAttribute="centerX" id="scg-vT-YHK"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -187,7 +234,10 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="HardEggTime" destination="t6G-yZ-KAz" id="BQ4-bw-H03"/>
                         <outlet property="InputSeconds" destination="70H-xN-m1v" id="3Rz-Xy-lZ0"/>
+                        <outlet property="MediumEggTime" destination="6tY-3P-Be8" id="Hpj-ob-yIo"/>
+                        <outlet property="SoftEggTime" destination="3ew-jK-fXp" id="3xJ-EB-5i2"/>
                         <outlet property="progressBar" destination="B4U-fy-91r" id="J7S-Yw-NMu"/>
                         <outlet property="titleLabel" destination="XLm-5r-pSP" id="yme-SJ-HJq"/>
                     </connections>
